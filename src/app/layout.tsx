@@ -5,7 +5,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'PaddyFlow Insights',
   description:
-    'An analysis tool for process efficiency and decision-making in the rice supply chain, featuring mass flow visualization and KPI tracking.',
+    'Alat analisis untuk efisiensi proses dan pengambilan keputusan dalam rantai pasokan beras, yang menampilkan visualisasi aliran massa dan pelacakan KPI.',
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="id" className="!scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

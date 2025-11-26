@@ -19,10 +19,10 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const analysisSchema = z.object({
   identifiedAnomalies: z.string().min(20, {
-    message: 'Please provide a detailed description of anomalies (at least 20 characters).',
+    message: 'Harap berikan deskripsi anomali secara detail (minimal 20 karakter).',
   }),
   pastCaseData: z.string().min(20, {
-    message: 'Please provide relevant past case data (at least 20 characters).',
+    message: 'Harap berikan data kasus lampau yang relevan (minimal 20 karakter).',
   }),
 });
 
@@ -51,11 +51,11 @@ export function Analysis() {
       const result = await getAnalysis(data);
       setAnalysisResult(result);
     } catch (e) {
-      const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred.';
+      const errorMessage = e instanceof Error ? e.message : 'Terjadi kesalahan yang tidak diketahui.';
       setError(errorMessage);
       toast({
         variant: 'destructive',
-        title: 'Analysis Failed',
+        title: 'Analisis Gagal',
         description: errorMessage,
       });
     } finally {
@@ -77,15 +77,15 @@ export function Analysis() {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div className="lg:sticky lg:top-24">
           <div className="mb-8">
-            <h2 className="font-headline text-4xl font-bold text-secondary">Loss Root Cause Analysis</h2>
+            <h2 className="font-headline text-4xl font-bold text-secondary">Analisis Akar Penyebab Kerugian</h2>
             <p className="mt-4 max-w-2xl text-lg text-secondary/70">
-              Leverage AI to diagnose supply chain issues. Describe the problem and provide historical context to receive potential root causes and solutions.
+              Manfaatkan AI untuk mendiagnosis masalah rantai pasokan. Jelaskan masalahnya dan berikan konteks historis untuk menerima akar penyebab dan solusi potensial.
             </p>
           </div>
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle>Submit for Analysis</CardTitle>
-              <CardDescription>Fill in the details below to start the AI analysis.</CardDescription>
+              <CardTitle>Kirim untuk Analisis</CardTitle>
+              <CardDescription>Isi detail di bawah ini untuk memulai analisis AI.</CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -95,10 +95,10 @@ export function Analysis() {
                     name="identifiedAnomalies"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Identified Anomalies</FormLabel>
+                        <FormLabel>Anomali yang Diidentifikasi</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="e.g., 'Unexpected 15% weight loss observed in Batch B-7 during the drying phase at the Northern facility in the last quarter...'"
+                            placeholder="cth., 'Kehilangan berat tak terduga sebesar 15% teramati pada Batch B-7 selama fase pengeringan di fasilitas Utara pada kuartal terakhir...'"
                             className="min-h-[120px]"
                             {...field}
                           />
@@ -112,10 +112,10 @@ export function Analysis() {
                     name="pastCaseData"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Past Case Data</FormLabel>
+                        <FormLabel>Data Kasus Lampau</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="e.g., 'Similar losses in 2021 were attributed to high humidity levels and malfunctioning sensor equipment...'"
+                            placeholder="cth., 'Kerugian serupa pada tahun 2021 disebabkan oleh tingkat kelembapan tinggi dan peralatan sensor yang tidak berfungsi...'"
                             className="min-h-[120px]"
                             {...field}
                           />
@@ -128,12 +128,12 @@ export function Analysis() {
                     {isLoading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Analyzing...
+                        Menganalisis...
                       </>
                     ) : (
                       <>
                         <Lightbulb className="mr-2 h-4 w-4" />
-                        Run Analysis
+                        Jalankan Analisis
                       </>
                     )}
                   </Button>
@@ -144,7 +144,7 @@ export function Analysis() {
         </div>
         
         <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-secondary">Analysis Results</h3>
+            <h3 className="text-2xl font-bold text-secondary">Hasil Analisis</h3>
             {isLoading && (
                  <div className="space-y-4">
                     {[...Array(2)].map((_, i) => (
@@ -168,7 +168,7 @@ export function Analysis() {
             )}
             {!isLoading && !analysisResult && !error && (
                 <div className="text-center py-12 border-2 border-dashed rounded-lg">
-                    <p className="text-secondary/60">Results will appear here once analysis is complete.</p>
+                    <p className="text-secondary/60">Hasil akan muncul di sini setelah analisis selesai.</p>
                 </div>
             )}
             {analysisResult && (
@@ -178,16 +178,16 @@ export function Analysis() {
                             <CardHeader>
                                 <CardTitle className="text-lg text-secondary">{cause}</CardTitle>
                                 <div className="flex items-center gap-4 pt-2">
-                                     <Badge variant="secondary">Likelihood: {Math.round(analysisResult.likelihoods[index] * 100)}%</Badge>
+                                     <Badge variant="secondary">Kemungkinan: {Math.round(analysisResult.likelihoods[index] * 100)}%</Badge>
                                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                         <span className={cn('h-3 w-3 rounded-full', getConfidenceColor(analysisResult.confidenceLevels[index]))}></span>
-                                        Confidence: {analysisResult.confidenceLevels[index]}
+                                        Tingkat Kepercayaan: {analysisResult.confidenceLevels[index]}
                                      </div>
                                 </div>
                                 <Progress value={analysisResult.likelihoods[index] * 100} className="mt-3 h-2" />
                             </CardHeader>
                             <CardContent>
-                                <h4 className="font-semibold text-secondary mb-2">Recommended Solution:</h4>
+                                <h4 className="font-semibold text-secondary mb-2">Solusi yang Direkomendasikan:</h4>
                                 <p className="text-secondary/80">{analysisResult.recommendedSolutions[index]}</p>
                             </CardContent>
                         </Card>

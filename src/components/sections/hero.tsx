@@ -28,26 +28,26 @@ export function Hero() {
           <div className="inline-block rounded-full bg-primary/10 px-4 py-2 border border-primary/20">
              <div className="flex items-center gap-2">
                 <LeafIcon className="w-5 h-5 text-primary" />
-                <p className="font-semibold text-primary">Sustainable Rice Supply Chain</p>
+                <p className="font-semibold text-primary">Rantai Pasokan Beras Berkelanjutan</p>
              </div>
           </div>
           <h1 className="font-headline text-5xl font-extrabold tracking-tight text-secondary md:text-6xl lg:text-7xl">
-            Unlock Efficiency in Your Supply Chain
+            Buka Efisiensi dalam Rantai Pasokan Anda
           </h1>
           <p className="text-lg text-secondary/80 md:text-xl">
-            PaddyFlow Insights provides an advanced analysis tool to optimize process efficiency, enhance decision-making, and reduce post-harvest losses.
+            PaddyFlow Insights menyediakan alat analisis canggih untuk mengoptimalkan efisiensi proses, meningkatkan pengambilan keputusan, dan mengurangi kerugian pascapanen.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="#dashboard">
                 <BarChart2 />
-                View Dashboard
+                Lihat Dasbor
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-secondary/30 bg-background/50 hover:bg-background/80">
               <Link href="#background">
                 <ChevronDown />
-                Learn More
+                Pelajari Lebih Lanjut
               </Link>
             </Button>
           </div>

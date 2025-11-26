@@ -6,9 +6,9 @@ export function Dashboard() {
     <section id="dashboard" className="py-16 md:py-24 bg-background scroll-mt-20">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-            <h2 className="font-headline text-4xl font-bold text-secondary">Analytics Dashboard</h2>
+            <h2 className="font-headline text-4xl font-bold text-secondary">Dasbor Analitik</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-secondary/70">
-                Visualize key performance indicators and track the mass flow of the rice supply chain in real-time.
+                Visualisasikan indikator kinerja utama dan lacak aliran massa rantai pasokan beras secara real-time.
             </p>
         </div>
         
@@ -19,8 +19,8 @@ export function Dashboard() {
                         <BarChartHorizontal className="h-6 w-6" />
                     </div>
                     <div>
-                        <CardTitle className="text-secondary">PaddyFlow Live Report</CardTitle>
-                        <CardDescription>Embedded Power BI for interactive data exploration.</CardDescription>
+                        <CardTitle className="text-secondary">Laporan Langsung PaddyFlow</CardTitle>
+                        <CardDescription>Power BI tersemat untuk eksplorasi data interaktif.</CardDescription>
                     </div>
                 </div>
             </CardHeader>

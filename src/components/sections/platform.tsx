@@ -3,10 +3,10 @@ import { CheckCircle2 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const features = [
-  "Mass flow visualization across all stages.",
-  "Real-time KPI tracking for immediate insights.",
-  "AI-powered root cause analysis for loss reduction.",
-  "Data-driven decision-making support.",
+  "Visualisasi aliran massa di semua tahap.",
+  "Pelacakan KPI real-time untuk wawasan langsung.",
+  "Analisis akar penyebab bertenaga AI untuk pengurangan kerugian.",
+  "Dukungan pengambilan keputusan berbasis data.",
 ];
 
 export function Platform() {
@@ -18,11 +18,11 @@ export function Platform() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm font-semibold text-primary-foreground">
-                Our Platform
+                Platform Kami
             </div>
-            <h2 className="font-headline text-4xl font-bold text-secondary">A Tool for Efficiency and Growth</h2>
+            <h2 className="font-headline text-4xl font-bold text-secondary">Alat untuk Efisiensi dan Pertumbuhan</h2>
             <p className="text-lg text-secondary/70">
-                PaddyFlow Insights is designed to be the central hub for analyzing and improving your rice supply chain. We transform complex data into clear, actionable insights.
+                PaddyFlow Insights dirancang untuk menjadi pusat analisis dan peningkatan rantai pasokan beras Anda. Kami mengubah data kompleks menjadi wawasan yang jelas dan dapat ditindaklanjuti.
             </p>
             <ul className="space-y-4">
                 {features.map((feature, index) => (

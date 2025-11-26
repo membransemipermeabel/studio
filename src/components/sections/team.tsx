@@ -6,26 +6,20 @@ const teamMembers = [
   {
     id: "team-member-1",
     name: "Dr. Alistair Finch",
-    role: "Lead Data Scientist",
-    description: "Expert in agricultural data analysis and predictive modeling, driving the AI-powered insights of our platform.",
+    role: "Ilmuwan Data Utama",
+    description: "Ahli dalam analisis data pertanian dan pemodelan prediktif, mendorong wawasan bertenaga AI dari platform kami.",
   },
   {
     id: "team-member-2",
     name: "Dr. Lena Petrova",
-    role: "Supply Chain Analyst",
-    description: "Specializes in logistics and process optimization, ensuring our models reflect real-world supply chain dynamics.",
+    role: "Analis Rantai Pasokan",
+    description: "Spesialisasi dalam logistik dan optimisasi proses, memastikan model kami mencerminkan dinamika rantai pasokan dunia nyata.",
   },
   {
     id: "team-member-3",
     name: "Kenji Tanaka",
-    role: "Lead Software Engineer",
-    description: "Architects and builds the robust, scalable platform that delivers our analytics and visualizations.",
-  },
-  {
-    id: "team-member-4",
-    name: "Maria Garcia",
-    role: "UX/UI Designer",
-    description: "Designs the intuitive and user-friendly interface, making complex data accessible and easy to understand.",
+    role: "Insinyur Perangkat Lunak Utama",
+    description: "Merancang dan membangun platform yang kuat dan dapat diskalakan yang memberikan analitik dan visualisasi kami.",
   },
 ];
 
@@ -34,12 +28,12 @@ export function Team() {
     <section id="team" className="py-16 md:py-24 bg-background scroll-mt-20">
         <div className="container mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-12">
-                <h2 className="font-headline text-4xl font-bold text-secondary">Meet the Team</h2>
+                <h2 className="font-headline text-4xl font-bold text-secondary">Temui Tim Kami</h2>
                 <p className="mt-4 text-lg text-secondary/70">
-                    A dedicated group of experts in data science, supply chain management, and software engineering.
+                    Kelompok ahli yang berdedikasi dalam ilmu data, manajemen rantai pasokan, dan rekayasa perangkat lunak.
                 </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {teamMembers.map((member) => {
                     const memberImage = PlaceHolderImages.find((img) => img.id === member.id);
                     return (

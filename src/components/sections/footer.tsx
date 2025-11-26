@@ -12,7 +12,7 @@ export function Footer() {
                 <span className="text-sm font-medium text-secondary/70">PaddyFlow Insights</span>
             </div>
             <p className="text-sm text-secondary/60">
-                &copy; {currentYear} PaddyFlow Insights. All rights reserved.
+                &copy; {currentYear} PaddyFlow Insights. Hak cipta dilindungi.
             </p>
         </div>
       </div>

@@ -9,11 +9,11 @@ import { cn } from '@/lib/utils';
 import { LeafIcon } from '@/components/icons/leaf';
 
 const navItems = [
-  { href: '#dashboard', label: 'Dashboard' },
-  { href: '#analysis', label: 'Analysis' },
-  { href: '#background', label: 'Background' },
+  { href: '#dashboard', label: 'Dasbor' },
+  { href: '#analysis', label: 'Analisis' },
+  { href: '#background', label: 'Latar Belakang' },
   { href: '#platform', label: 'Platform' },
-  { href: '#team', label: 'Team' },
+  { href: '#team', label: 'Tim' },
 ];
 
 export function Header() {
@@ -87,7 +87,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6 text-secondary" />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background">
@@ -100,7 +100,7 @@ export function Header() {
                   <SheetTrigger asChild>
                      <Button variant="ghost" size="icon">
                        <X className="h-6 w-6" />
-                       <span className="sr-only">Close menu</span>
+                       <span className="sr-only">Tutup menu</span>
                      </Button>
                   </SheetTrigger>
                 </div>
