@@ -8,6 +8,7 @@ import { Lightbulb, Loader2, AlertCircle } from 'lucide-react';
 import { getAnalysis } from '@/app/actions';
 import type { AnalyzeLossRootCauseOutput } from '@/ai/flows/analyze-loss-root-cause';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
