@@ -28,21 +28,21 @@ export type AnalyzeLossRootCauseInput = z.infer<typeof AnalyzeLossRootCauseInput
 const AnalyzeLossRootCauseOutputSchema = z.object({
   suggestedRootCauses: z
     .array(z.string())
-    .describe('A list of suggested potential root causes for the identified anomalies.'),
+    .describe('Daftar usulan akar penyebab potensial untuk anomali yang teridentifikasi.'),
   likelihoods: z
     .array(z.number())
     .describe(
-      'A corresponding list of likelihood scores (0-1) for each suggested root cause, based on past case data.'
+      'Daftar skor kemungkinan (0-1) yang sesuai untuk setiap usulan akar penyebab, berdasarkan data kasus lampau.'
     ),
   confidenceLevels: z
     .array(z.string())
     .describe(
-      'A corresponding list of confidence levels (low, medium, high) for each suggested root cause, based on the quality of the evidence.'
+      'Daftar tingkat kepercayaan (rendah, sedang, tinggi) yang sesuai untuk setiap usulan akar penyebab, berdasarkan kualitas bukti.'
     ),
   recommendedSolutions: z
     .array(z.string())
     .describe(
-      'A list of recommended solutions or remediation approaches for each suggested root cause.'
+      'Daftar solusi atau pendekatan perbaikan yang direkomendasikan untuk setiap usulan akar penyebab.'
     ),
 });
 export type AnalyzeLossRootCauseOutput = z.infer<typeof AnalyzeLossRootCauseOutputSchema>;
@@ -57,16 +57,16 @@ const analyzeLossRootCausePrompt = ai.definePrompt({
   name: 'analyzeLossRootCausePrompt',
   input: {schema: AnalyzeLossRootCauseInputSchema},
   output: {schema: AnalyzeLossRootCauseOutputSchema},
-  prompt: `You are an expert in analyzing rice supply chain losses. Given the identified anomalies and past case data, suggest potential root causes and solutions.  Assess the likelihood and confidence of each suggestion based on the provided data.
+  prompt: `Anda adalah seorang ahli dalam menganalisis kerugian rantai pasokan beras. Berdasarkan anomali yang teridentifikasi dan data kasus lampau, usulkan akar penyebab dan solusi potensial dalam Bahasa Indonesia. Nilai kemungkinan dan keyakinan dari setiap usulan berdasarkan data yang diberikan.
 
-Identified Anomalies: {{{identifiedAnomalies}}}
-Past Case Data: {{{pastCaseData}}}
+Anomali yang Diidentifikasi: {{{identifiedAnomalies}}}
+Data Kasus Lampau: {{{pastCaseData}}}
 
-Format your response as a JSON object with the following fields:
-- suggestedRootCauses: A list of potential root causes.
-- likelihoods: A list of likelihood scores (0-1) for each root cause.
-- confidenceLevels: A list of confidence levels (low, medium, high) for each root cause.
-- recommendedSolutions: A list of recommended solutions for each root cause.`,
+Format respons Anda sebagai objek JSON dengan bidang berikut:
+- suggestedRootCauses: Daftar akar penyebab potensial.
+- likelihoods: Daftar skor kemungkinan (0-1) untuk setiap akar penyebab.
+- confidenceLevels: Daftar tingkat kepercayaan (rendah, sedang, tinggi) untuk setiap akar penyebab.
+- recommendedSolutions: Daftar solusi yang direkomendasikan untuk setiap akar penyebab.`,
 });
 
 const analyzeLossRootCauseFlow = ai.defineFlow(
